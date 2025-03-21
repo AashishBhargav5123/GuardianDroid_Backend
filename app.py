@@ -9,6 +9,9 @@ app = Flask(__name__)  # ✅ Required!
 model = xgb.Booster()
 model.load_model("xgboost_model.json")  # Ensure this path is correct!
 
+# ✅ Print the expected feature names
+print("Expected Features:", model.feature_names)
+
 @app.route("/")
 def home():
     return "GuardianDroid Backend Running!"
